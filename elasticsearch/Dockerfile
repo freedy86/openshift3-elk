@@ -12,6 +12,7 @@ RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/el
 
 RUN set -x \
 	&& apt-get update \
+	&& apt-get install apt-transport-https \
 	&& apt-get install -y --no-install-recommends elasticsearch=$ELASTICSEARCH_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
