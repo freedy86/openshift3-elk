@@ -8,11 +8,13 @@ ENV ELASTICSEARCH_MAJOR 6.4
 ENV ELASTICSEARCH_VERSION 6.4
 ENV ELASTICSEARCH_REPO_BASE https://artifacts.elastic.co/packages/6.x/apt
 
+RUN set -x \
+	&& apt-get -y install apt-transport-https
+	
 RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/elastic-6.x.list
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get -y install apt-transport-https ca-certificates \
 	&& apt-get -y install metricbeat
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
