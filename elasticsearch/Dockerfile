@@ -30,7 +30,6 @@ RUN set -ex \
 		./config/scripts \
 	; do \
 		mkdir -p "$path"; \
-		chown -R elasticsearch:elasticsearch "$path"; \
 	done
 
 COPY config ./config
