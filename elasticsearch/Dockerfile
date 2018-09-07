@@ -8,7 +8,7 @@ ENV ELASTICSEARCH_MAJOR 6.4
 ENV ELASTICSEARCH_VERSION 6.4
 ENV ELASTICSEARCH_REPO_BASE https://artifacts.elastic.co/packages/6.x/apt
 
-RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > tee -a /etc/apt/sources.list.d/elastic-6.x.list
+RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/elastic-6.x.list
 
 RUN set -x \
 	&& apt-get install apt-transport-https
