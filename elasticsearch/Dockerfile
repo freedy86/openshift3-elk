@@ -12,8 +12,8 @@ RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/el
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get -y install apt-transport-https curl \
-	&& apt-get install metricbeat
+	&& apt-get -y install apt-transport-https ca-certificates \
+	&& apt-get -y install metricbeat
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 
