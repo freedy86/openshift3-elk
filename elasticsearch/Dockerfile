@@ -11,8 +11,6 @@ ENV ELASTICSEARCH_REPO_BASE https://artifacts.elastic.co/packages/6.x/apt
 RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/elasticsearch.list
 
 RUN set -x \
-	&& apt-get install apt-transport-https \
-	&& apt-get update \
 	&& apt-get install -y --no-install-recommends elasticsearch=$ELASTICSEARCH_VERSION \
 	&& rm -rf /var/lib/apt/lists/*
 
