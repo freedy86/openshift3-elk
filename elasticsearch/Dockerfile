@@ -35,7 +35,8 @@ RUN set -ex \
         done
 
 RUN chown -R elasticsearch:elasticsearch /etc/default;
-RUN chmod -R 777 /etc/default;
+RUN chmod -R 777 /etc;
+RUN chmod -R 777 /var;
 
 COPY config ./config
 
