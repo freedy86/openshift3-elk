@@ -22,6 +22,10 @@ RUN \
 # Copy the S2I scripts to /usr/libexec/s2i, since openshift/base-centos7 image sets io.openshift.s2i.scripts-url label that way, or update that label
 COPY ./.s2i/bin/ /usr/libexec/s2i
 
+COPY 10-input.conf /opt/app-root/src/
+
+COPY 40-output.conf /opt/app-root/src/
+
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root
 
