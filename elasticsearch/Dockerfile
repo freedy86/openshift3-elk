@@ -16,7 +16,7 @@ RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/el
 
 RUN set -x \
         && apt-get update \
-        && apt-get install elasticsearch
+        && apt-get -o Debug::pkgProblemResolver=true -o Debug::Acquire::http=true install elasticsearch
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 
