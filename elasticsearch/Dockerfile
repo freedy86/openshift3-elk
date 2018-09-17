@@ -15,8 +15,7 @@ RUN apt-get update && apt-get -y install apt-transport-https curl
 RUN echo "deb $ELASTICSEARCH_REPO_BASE stable main" > /etc/apt/sources.list.d/elastic-6.x.list
 
 RUN set -x \
-        && apt-get update \
-        && apt-get -o Debug::pkgProblemResolver=true -o Debug::Acquire::http=true install elasticsearch
+        && apt-get -y install elasticsearch
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 
