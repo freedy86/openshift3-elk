@@ -29,6 +29,8 @@ COPY 40-output.conf /opt/app-root/src/
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chown -R 1001:1001 /opt/app-root
 
+RUN chmod -R 777 /opt/app-root
+
 # This default user is created in the openshift/base-centos7 image
 USER 1001
 
