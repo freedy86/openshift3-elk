@@ -36,7 +36,7 @@ RUN chmod -R og+w /usr/share/kibana
 
 RUN chmod -R og+w /var/lib/kibana
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["kibana"]
 
